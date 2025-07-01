@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttsfvx0qbcq2"
-path="res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"
+uid="uid://b2opofve3y3we"
+path="res://.godot/imported/galaxy_uno.png-236eef8c19369f4495adb1234bf1825e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/explosion_animation.png"
-dest_files=["res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"]
+source_file="res://assets/backgrounds/galaxy_uno.png"
+dest_files=["res://.godot/imported/galaxy_uno.png-236eef8c19369f4495adb1234bf1825e.ctex"]
 
 [params]
 

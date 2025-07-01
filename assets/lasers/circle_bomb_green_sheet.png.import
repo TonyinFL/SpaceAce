@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttsfvx0qbcq2"
-path="res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"
+uid="uid://bv6u6puijcwld"
+path="res://.godot/imported/circle_bomb_green_sheet.png-eec4038748098bb150fe69d18058998d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/explosion_animation.png"
-dest_files=["res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"]
+source_file="res://assets/lasers/circle_bomb_green_sheet.png"
+dest_files=["res://.godot/imported/circle_bomb_green_sheet.png-eec4038748098bb150fe69d18058998d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttsfvx0qbcq2"
-path="res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"
+uid="uid://corto2r4s6dis"
+path="res://.godot/imported/power_up_green_bolt.png-39b40d992c459a05bbec76324e25ba9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/explosion_animation.png"
-dest_files=["res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"]
+source_file="res://assets/misc/power_up_green_bolt.png"
+dest_files=["res://.godot/imported/power_up_green_bolt.png-39b40d992c459a05bbec76324e25ba9c.ctex"]
 
 [params]
 

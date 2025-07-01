@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4on2i2yykp6r"]
 
-[ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://Scenes/LevelBg/LevelBg.tscn" id="1_3hkb6"]
-[ext_resource type="PackedScene" uid="uid://cj6s025qtrnja" path="res://Scenes/ShakeCam/ShakeCam.tscn" id="2_4dwx7"]
-[ext_resource type="PackedScene" uid="uid://cs7twesq7bmwk" path="res://Scenes/Player/Player.tscn" id="3_4dwx7"]
-[ext_resource type="PackedScene" uid="uid://c8pkpg6y6ly4y" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="4_k2uda"]
-[ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/Mercury.wav" id="5_ksici"]
+[ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://scenes/level_bg/level_bg.tscn" id="1_3hkb6"]
+[ext_resource type="PackedScene" uid="uid://cj6s025qtrnja" path="res://scenes/shake_cam/shake_cam.tscn" id="2_4dwx7"]
+[ext_resource type="PackedScene" uid="uid://cs7twesq7bmwk" path="res://scenes/player/player.tscn" id="3_4dwx7"]
+[ext_resource type="PackedScene" uid="uid://c8pkpg6y6ly4y" path="res://scenes/object_maker/object_maker.tscn" id="4_k2uda"]
+[ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/mercury.wav" id="5_ksici"]
 
 [node name="Level" type="Node2D"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttsfvx0qbcq2"
-path="res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"
+uid="uid://dejgdm78mcnqt"
+path="res://.godot/imported/glass_panel.png-4fe79e649953755850b81ef04476dd25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/explosion_animation.png"
-dest_files=["res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"]
+source_file="res://assets/ui/glass_panel.png"
+dest_files=["res://.godot/imported/glass_panel.png-4fe79e649953755850b81ef04476dd25.ctex"]
 
 [params]
 

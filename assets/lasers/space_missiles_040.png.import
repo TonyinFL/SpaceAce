@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttsfvx0qbcq2"
-path="res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"
+uid="uid://bqywi64wvxcqj"
+path="res://.godot/imported/space_missiles_040.png-31ee66bceb085cda78d7331f89e84d53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/explosion_animation.png"
-dest_files=["res://.godot/imported/explosion_animation.png-8fc2c83b7574f9fa2ad28865ed09da39.ctex"]
+source_file="res://assets/lasers/space_missiles_040.png"
+dest_files=["res://.godot/imported/space_missiles_040.png-31ee66bceb085cda78d7331f89e84d53.ctex"]
 
 [params]
 

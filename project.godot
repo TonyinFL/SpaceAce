@@ -18,9 +18,9 @@ config/icon="uid://cf5ua6nbkyovw"
 
 [autoload]
 
-SignalHub="*res://Globals/SignalHub.gd"
-ScoreManager="*res://Globals/ScoreManager.gd"
-GameManager="*res://Globals/GameManager.gd"
+SignalHub="*res://autoloads/signal_hub.gd"
+ScoreManager="*res://autoloads/score_manager.gd"
+GameManager="*res://autoloads/game_manager.gd"
 
 [display]
 
