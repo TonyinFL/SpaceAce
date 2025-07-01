@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="SpaceAce"
-config/description="Starter pack"
 run/main_scene="uid://2ajn46ojd0r2"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://cf5ua6nbkyovw"
@@ -22,16 +21,22 @@ SignalHub="*res://autoloads/signal_hub.gd"
 ScoreManager="*res://autoloads/score_manager.gd"
 GameManager="*res://autoloads/game_manager.gd"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
+
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/window_width_override=960
+window/size/window_height_override=720
 window/stretch/mode="viewport"
 
 [editor]
 
-naming/scene_name_casing=1
-naming/script_name_casing=1
+naming/script_name_casing=2
 
 [input]
 
@@ -63,10 +68,10 @@ exit={
 [layer_names]
 
 2d_physics/layer_1="player"
-2d_physics/layer_2="player_bullet"
-2d_physics/layer_3="enemy_bullet"
-2d_physics/layer_4="enemy"
-2d_physics/layer_5="power_up"
+2d_physics/layer_2="player_bullets"
+2d_physics/layer_3="enemy_bullets"
+2d_physics/layer_4="enemys"
+2d_physics/layer_5="power_ups"
 2d_physics/layer_6="shield"
 
 [rendering]

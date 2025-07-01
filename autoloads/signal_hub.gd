@@ -1,6 +1,5 @@
 extends Node
 
-
 signal on_player_hit(v: int)
 signal on_score_updated(v: int)
 

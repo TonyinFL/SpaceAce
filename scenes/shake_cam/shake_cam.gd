@@ -1,5 +1,4 @@
-extends Camera2D
-
+class_name ShakeCam extends Camera2D
 
 const SHAKE_RANGE: Vector2 = Vector2(-3.0,3.0)
 const SHAKE_TIME: float = 0.3

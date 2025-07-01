@@ -1,9 +1,7 @@
 extends Node
 
-
 var score: int = 0:
 	get: return score
-
 
 var high_score: int = 0:
 	get: return high_score

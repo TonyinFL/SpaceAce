@@ -1,6 +1,5 @@
 extends Node
 
-
 const MAIN = preload("res://Scenes/Main/Main.tscn")
 const LEVEL = preload("res://Scenes/Level/Level.tscn")
 

@@ -1,5 +1,4 @@
-extends Node2D
-
+class_name ObjectMaker extends Node2D
 
 const ADD_OBJECT: String = "add_object"
 

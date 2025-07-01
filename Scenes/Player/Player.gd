@@ -1,14 +1,8 @@
-extends Area2D
-
-
-class_name Player
-
+class_name Player extends Area2D
 
 const GROUP_NAME: String = "Player"
 
-
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
 
 
 # Called when the node enters the scene tree for the first time.

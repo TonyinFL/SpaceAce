@@ -1,5 +1,4 @@
-extends Node
-
+class_name OutOfTime extends Node
 
 @export var life_s: float = 30.0
 
