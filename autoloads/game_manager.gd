@@ -1,7 +1,7 @@
 extends Node
 
-const MAIN = preload("res://Scenes/Main/Main.tscn")
-const LEVEL = preload("res://Scenes/Level/Level.tscn")
+const MAIN: PackedScene = preload("res://scenes/main/main.tscn")
+const LEVEL: PackedScene = preload("res://scenes/level/level.tscn")
 
 
 func load_main_scene() -> void:

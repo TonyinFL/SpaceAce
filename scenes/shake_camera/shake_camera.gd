@@ -1,17 +1,17 @@
-class_name ShakeCam extends Camera2D
+class_name ShakeCamera extends Camera2D
 
 const SHAKE_RANGE: Vector2 = Vector2(-3.0,3.0)
 const SHAKE_TIME: float = 0.3
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	SignalHub.on_player_hit.connect(on_player_hit)
 	set_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta: float) -> void:
 	offset = Vector2(
 		get_random_shake_amount(), 
 		get_random_shake_amount(),
@@ -22,7 +22,7 @@ func get_random_shake_amount() -> float:
 	return randf_range(SHAKE_RANGE.x, SHAKE_RANGE.y)
 
 
-func on_player_hit(_v: int) -> void:
+func on_player_hit(_damage: int) -> void:
 	set_process(true)
 	await get_tree().create_timer(SHAKE_TIME).timeout
 	set_process(false)

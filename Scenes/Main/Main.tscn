@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2opofve3y3we" path="res://assets/backgrounds/galaxy_uno.png" id="1_k2fmo"]
 [ext_resource type="AudioStream" uid="uid://ch61rkn7lovsl" path="res://assets/sounds/loops/title_screen.mp3" id="2_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://sqr4aejsdpl5" path="res://scenes/sun/sun.tscn" id="3_6q06x"]
+[ext_resource type="PackedScene" uid="uid://i8w0aqrgjh03" path="res://scenes/sun/sun.tscn" id="3_6q06x"]
 
 [node name="Main" type="Control"]
 process_mode = 3
