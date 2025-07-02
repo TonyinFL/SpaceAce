@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://2ajn46ojd0r2"]
+[gd_scene load_steps=7 format=3 uid="uid://2ajn46ojd0r2"]
 
+[ext_resource type="Script" uid="uid://b03qls6scoj82" path="res://scenes/main/main.gd" id="1_6q06x"]
 [ext_resource type="Texture2D" uid="uid://b2opofve3y3we" path="res://assets/backgrounds/galaxy_uno.png" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://dwmri4edoxlmh" path="res://scenes/ui_button/ui_button.tscn" id="2_6q06x"]
 [ext_resource type="AudioStream" uid="uid://ch61rkn7lovsl" path="res://assets/sounds/loops/title_screen.mp3" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://i8w0aqrgjh03" path="res://scenes/sun/sun.tscn" id="3_6q06x"]
+[ext_resource type="LabelSettings" uid="uid://btf15kos0mkbq" path="res://resources/lg_orange_72.tres" id="3_ow5a4"]
 
 [node name="Main" type="Control"]
 process_mode = 3
@@ -12,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6q06x")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,15 +33,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
+theme_override_constants/margin_left = 48
 theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
+theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 24
 
 [node name="Label" type="Label" parent="MC"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "SPACE ACE"
+text = "SPACE
+ACE"
+label_settings = ExtResource("3_ow5a4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VB" type="VBoxContainer" parent="MC"]
 layout_mode = 2
@@ -45,11 +53,26 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 18
 
+[node name="PlayButton" parent="MC/VB" instance=ExtResource("2_6q06x")]
+layout_mode = 2
+size_flags_horizontal = 4
+button_text = "Play"
+
+[node name="ExitButton" parent="MC/VB" instance=ExtResource("2_6q06x")]
+layout_mode = 2
+size_flags_horizontal = 4
+button_text = "Exit"
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_l3cfh")
 volume_db = -20.0
 autoplay = true
 
 [node name="Sun" parent="." instance=ExtResource("3_6q06x")]
-position = Vector2(48, 50)
+position = Vector2(75, 75)
 scale = Vector2(0.3, 0.3)
+frame = 1
+frame_progress = 0.56494
+
+[connection signal="pressed" from="MC/VB/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MC/VB/ExitButton" to="." method="_on_exit_button_pressed"]

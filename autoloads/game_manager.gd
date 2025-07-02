@@ -10,3 +10,7 @@ func load_main_scene() -> void:
 
 func load_level_scene() -> void:
 	get_tree().change_scene_to_packed(LEVEL)
+
+
+func exit_game() -> void:
+	get_tree().quit()
