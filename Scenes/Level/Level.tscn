@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4on2i2yykp6r"]
+[gd_scene load_steps=7 format=3 uid="uid://b4on2i2yykp6r"]
 
 [ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://scenes/level_background/level_background.tscn" id="1_3hkb6"]
+[ext_resource type="Script" uid="uid://dv4vs0qt2e8rm" path="res://scenes/level/level.gd" id="1_vpf64"]
 [ext_resource type="PackedScene" uid="uid://cj6s025qtrnja" path="res://scenes/shake_camera/shake_camera.tscn" id="2_4dwx7"]
 [ext_resource type="PackedScene" uid="uid://cs7twesq7bmwk" path="res://scenes/player/player.tscn" id="3_4dwx7"]
 [ext_resource type="PackedScene" uid="uid://c8pkpg6y6ly4y" path="res://scenes/object_maker/object_maker.tscn" id="4_k2uda"]
 [ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/mercury.wav" id="5_ksici"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_vpf64")
 
 [node name="ShakeCamera" parent="." instance=ExtResource("2_4dwx7")]
 

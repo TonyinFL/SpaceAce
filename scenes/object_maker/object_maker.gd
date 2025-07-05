@@ -1,13 +1,19 @@
 class_name ObjectMaker extends Node2D
 
 const ADD_OBJECT: String = "add_object"
+const EXPLOSION: PackedScene = preload("res://scenes/explosion/explosion.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	SignalHub.on_create_explosion.connect(on_create_explosion)
 
-# TODO Consider name changes: obj -> node and pos -> spawn_position
-func add_object(obj: Node, pos: Vector2) -> void:
-	add_child(obj)
-	obj.global_position = pos
+
+func add_object(object: Node, spawn_position: Vector2) -> void:
+	object.global_position = spawn_position
+	add_child(object)
+
+
+func on_create_explosion(animation_name: String, spawn_position: Vector2) -> void:
+	var explosion: Explosion = EXPLOSION.instantiate()
+	explosion.setup(animation_name)
+	call_deferred(ADD_OBJECT, explosion, spawn_position)
