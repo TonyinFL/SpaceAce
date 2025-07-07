@@ -1,19 +1,41 @@
 class_name ObjectMaker extends Node2D
 
 const ADD_OBJECT: String = "add_object"
-const EXPLOSION: PackedScene = preload("res://scenes/explosion/explosion.tscn")
-const POWER_UP: PackedScene = preload("res://scenes/power_up/power_up.tscn")
+const EXPLOSION: PackedScene = preload("res://scenes/explosions/explosion.tscn")
+const POWER_UP: PackedScene = preload("res://scenes/projectiles/power_ups/power_up.tscn")
+const BULLET_PLAYER: PackedScene = preload("res://scenes/projectiles/bullets/bullet_player.tscn")
+const BULLET_ENEMY: PackedScene = preload("res://scenes/projectiles/bullets/bullet_enemy.tscn")
+const BULLET_BOMB: PackedScene = preload("res://scenes/projectiles/bullets/bullet_bomb.tscn")
 
 
 func _ready() -> void:
 	SignalHub.on_create_explosion.connect(on_create_explosion)
 	SignalHub.on_create_power_up.connect(on_create_power_up)
 	SignalHub.on_create_random_power_up.connect(on_create_random_power_up)
+	SignalHub.on_create_bullet.connect(on_create_bullet)
 
 
 func add_object(object: Node, spawn_position: Vector2) -> void:
 	object.global_position = spawn_position
 	add_child(object)
+
+
+func on_create_bullet(bullet_type: BulletBase.BulletType, spawn_position: Vector2,
+		direction: Vector2, speed: float) -> void:
+	var bullet: BulletBase
+	match bullet_type:
+		BulletBase.BulletType.Player:
+			bullet = BULLET_PLAYER.instantiate()
+		BulletBase.BulletType.Enemy:
+			bullet = BULLET_ENEMY.instantiate()
+		BulletBase.BulletType.Bomb:
+			bullet = BULLET_BOMB.instantiate()
+		_:
+			printerr("Unknown bullet type!")
+			return
+	if bullet:
+		bullet.setup(direction, speed)
+		call_deferred(ADD_OBJECT, bullet, spawn_position)
 
 
 func on_create_explosion(animation_name: String, spawn_position: Vector2) -> void:

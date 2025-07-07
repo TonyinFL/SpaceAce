@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnygy7vltprqu"]
+
+[ext_resource type="PackedScene" uid="uid://t606k8caw854" path="res://scenes/projectiles/bullets/bullet_base.tscn" id="1_1bkv1"]
+[ext_resource type="Script" uid="uid://crqumdg6x0bkq" path="res://scenes/projectiles/bullets/bullet_bomb.gd" id="2_02gh2"]
+[ext_resource type="Texture2D" uid="uid://cdbm8frqf8tqn" path="res://assets/bullets/circle_bomb_red.png" id="3_0v8nm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0v8nm"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_34el3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h810n"]
+resource_name = "bomb"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8q22"]
+_data = {
+&"RESET": SubResource("Animation_34el3"),
+&"bomb": SubResource("Animation_h810n")
+}
+
+[node name="BulletBomb" instance=ExtResource("1_1bkv1")]
+collision_layer = 4
+collision_mask = 33
+script = ExtResource("2_02gh2")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_0v8nm")
+hframes = 4
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_0v8nm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_j8q22")
+}
+autoplay = "bomb"
