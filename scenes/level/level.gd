@@ -7,19 +7,19 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
 		SignalHub.emit_on_create_bullet(
 			BulletBase.BulletType.Player, 
-			player.global_position,
+			player.global_position + Vector2(0, -225),
 			get_random_upward_vector(),
-			150.0)
+			-150.0)
 		SignalHub.emit_on_create_bullet(
 			BulletBase.BulletType.Enemy, 
-			player.global_position + Vector2(0, -25), # 25px above to prvent player collision
+			player.global_position + Vector2(0, -225),
 			get_random_upward_vector(),
-			150.0)
+			-150.0)
 		SignalHub.emit_on_create_bullet(
 			BulletBase.BulletType.Bomb, 
-			player.global_position + Vector2(0, -25), # 25px above to prvent player collision
+			player.global_position + Vector2(0, -225),
 			get_random_upward_vector(),
-			150.0)
+			-100.0)
 
 
 func get_random_upward_vector() -> Vector2:

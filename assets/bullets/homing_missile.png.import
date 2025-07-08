@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqywi64wvxcqj"
-path="res://.godot/imported/space_missile.png-234d21f30350b2476c4f33dc58eb70ef.ctex"
+path="res://.godot/imported/homing_missile.png-1c64562ec815048865af8c33695c4a44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bullets/space_missile.png"
-dest_files=["res://.godot/imported/space_missile.png-234d21f30350b2476c4f33dc58eb70ef.ctex"]
+source_file="res://assets/bullets/homing_missile.png"
+dest_files=["res://.godot/imported/homing_missile.png-1c64562ec815048865af8c33695c4a44.ctex"]
 
 [params]
 

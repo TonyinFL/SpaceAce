@@ -18,3 +18,7 @@ func setup(direction: Vector2, speed: float) -> void:
 	_direction = direction
 	_speed = speed
 	
+
+func blow_up() -> void:
+	SignalHub.emit_on_create_explosion(Explosion.EXPLODE, global_position)
+	super()
