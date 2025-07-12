@@ -7,7 +7,7 @@ var high_score: int = 0:
 	get: return high_score
 
 
-func increment_score(value: int) -> void:
+func add_to_score(value: int) -> void:
 	score += value
 	if high_score < score:
 		high_score = score

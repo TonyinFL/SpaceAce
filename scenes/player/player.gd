@@ -13,5 +13,7 @@ func _enter_tree() -> void:
 	add_to_group(GROUP_NAME)
 
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+
+	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
+	position += direction * 400.0 * delta		
