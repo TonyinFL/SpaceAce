@@ -10,7 +10,7 @@ static func play_random_animation(anim: AnimatedSprite2D) -> void:
 	anim.play(animations[randi() % animations.size()])
 
 
-static func set_and_start_timer(t: Timer, wait: float, variance: float):
+static func set_and_start_timer(t: Timer, wait: float, variance: float) -> void:
 	t.wait_time = wait + randf_range(-variance, variance)
 	t.start()
 	

@@ -24,3 +24,7 @@ func setup(power_up_type: PowerUp.PowerUpType) -> void:
 
 func _process(delta: float) -> void:
 	position.y += speed * Vector2.DOWN.y * delta
+
+
+func get_power_up_type() -> PowerUpType:
+	return _power_up_type
