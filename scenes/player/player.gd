@@ -15,7 +15,6 @@ func _enter_tree() -> void:
 
 
 func _process(delta: float) -> void:
-
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	position += direction * 400.0 * delta		
 
@@ -24,3 +23,5 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is PowerUp:
 		if area.get_power_up_type() == PowerUp.PowerUpType.Shield:
 			shield.enable_shield()
+	elif area is Projectile:
+		SignalHub.emit_on_player_hit(area.get_damage())

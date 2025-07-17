@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4on2i2yykp6r"]
+[gd_scene load_steps=10 format=3 uid="uid://b4on2i2yykp6r"]
 
 [ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://scenes/level_background/level_background.tscn" id="1_3hkb6"]
 [ext_resource type="Script" uid="uid://dv4vs0qt2e8rm" path="res://scenes/level/level.gd" id="1_vpf64"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/mercury.wav" id="5_ksici"]
 [ext_resource type="PackedScene" uid="uid://bmhde5d1ip83p" path="res://scenes/projectiles/homing_missile/homing_missile.tscn" id="7_wcngd"]
 [ext_resource type="PackedScene" uid="uid://hdfrccrhqlgh" path="res://scenes/projectiles/power_ups/power_up.tscn" id="8_xv074"]
+[ext_resource type="PackedScene" uid="uid://qctten1dbard" path="res://scenes/game_ui/game_ui.tscn" id="9_sytrn"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vpf64")
@@ -26,19 +27,11 @@ stream = ExtResource("5_ksici")
 volume_db = -10.0
 
 [node name="HomingMissile" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(315, 44)
+position = Vector2(316, 154)
 
-[node name="HomingMissile2" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(117, 45)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HomingMissile4" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(210, 92)
-
-[node name="HomingMissile5" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(429, 92)
-
-[node name="HomingMissile3" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(525, 41)
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("9_sytrn")]
 
 [node name="PowerUp" parent="." instance=ExtResource("8_xv074")]
-position = Vector2(211, 287)
+position = Vector2(314, 348)
