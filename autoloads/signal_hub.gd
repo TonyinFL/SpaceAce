@@ -1,6 +1,7 @@
 extends Node
 
 signal on_player_hit(damage: int)
+signal on_player_health_bonus(bonus: int)
 signal on_score_updated(score: int)
 signal on_create_explosion(animation_name: String, spawn_position: Vector2)
 signal on_create_power_up(power_up_type: PowerUp.PowerUpType, spawn_position: Vector2)
@@ -11,6 +12,10 @@ signal on_create_bullet(bullet_type: BulletBase.BulletType, spawn_position: Vect
 
 func emit_on_player_hit(damage: int) -> void:
 	on_player_hit.emit(damage)
+
+
+func emit_on_player_health_bonus(bonus: int) -> void:
+	on_player_health_bonus.emit(bonus)
 
 
 func emit_on_score_updated(score: int) -> void:

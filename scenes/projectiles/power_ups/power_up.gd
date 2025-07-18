@@ -2,6 +2,9 @@ class_name PowerUp extends Projectile
 
 enum PowerUpType {Health, Shield}
 
+const HEALTH_BONUS: int = 20
+const SHIELD_DURATION: float = 5.0
+
 const TEXTURES: Dictionary = {
 	PowerUpType.Health: preload("res://assets/misc/green_bolt.png"),
 	PowerUpType.Shield: preload("res://assets/misc/shield_gold.png"),

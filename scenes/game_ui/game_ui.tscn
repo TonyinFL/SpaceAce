@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qctten1dbard"]
+[gd_scene load_steps=5 format=3 uid="uid://qctten1dbard"]
 
 [ext_resource type="PackedScene" uid="uid://d1uk0utxa7nyl" path="res://scenes/health_bar/health_bar.tscn" id="1_1i64n"]
 [ext_resource type="Script" uid="uid://cjxpygctud3qh" path="res://scenes/game_ui/game_ui.gd" id="1_najyh"]
 [ext_resource type="LabelSettings" uid="uid://beeuh4lxlf4dy" path="res://resources/lg_white_32.tres" id="2_najyh"]
+[ext_resource type="AudioStream" uid="uid://boct87hp6wlp1" path="res://assets/sounds/power_ups/health_16.wav" id="4_2cwxn"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -44,5 +45,8 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "00000"
 label_settings = ExtResource("2_najyh")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2cwxn")
 
 [connection signal="died" from="ColorRect/MarginContainer/HealthBar" to="." method="_on_health_bar_died"]

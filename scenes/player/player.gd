@@ -21,7 +21,10 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is PowerUp:
-		if area.get_power_up_type() == PowerUp.PowerUpType.Shield:
-			shield.enable_shield()
+		match area.get_power_up_type():
+			PowerUp.PowerUpType.Shield:
+				shield.enable_shield(PowerUp.SHIELD_DURATION)
+			PowerUp.PowerUpType.Health:
+				SignalHub.emit_on_player_health_bonus(PowerUp.HEALTH_BONUS)
 	elif area is Projectile:
 		SignalHub.emit_on_player_hit(area.get_damage())

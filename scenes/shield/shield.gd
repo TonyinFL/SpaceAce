@@ -20,13 +20,19 @@ func disable_shield() -> void:
 	hide()
 
 
-func enable_shield() -> void:
-	animation_player.play("RESET")
-	_health = start_health
-	timer.start()
-	SpaceUtils.toggle_area2d(self, true)
+# TODO - setup label with shield health and timer value for debugging.
+func enable_shield(time: float) -> void:
+	if timer.is_stopped():
+		_health = start_health  # New shield, so reset health
+		animation_player.play("RESET")
+		timer.start(time)
+		SpaceUtils.toggle_area2d(self, true)
+		show()
+	else: # shield already active
+		_health += start_health  # stack health
+		timer.start(timer.time_left + time)  # extend duration
+	
 	sound.play()
-	show()
 	
 	
 func hit() -> void:
