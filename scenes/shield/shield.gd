@@ -20,7 +20,6 @@ func disable_shield() -> void:
 	hide()
 
 
-# TODO - setup label with shield health and timer value for debugging.
 func enable_shield(time: float) -> void:
 	if timer.is_stopped():
 		_health = start_health  # New shield, so reset health
