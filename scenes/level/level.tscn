@@ -6,8 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cs7twesq7bmwk" path="res://scenes/player/player.tscn" id="3_4dwx7"]
 [ext_resource type="PackedScene" uid="uid://c8pkpg6y6ly4y" path="res://scenes/object_maker/object_maker.tscn" id="4_k2uda"]
 [ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/mercury.wav" id="5_ksici"]
-[ext_resource type="PackedScene" uid="uid://bmhde5d1ip83p" path="res://scenes/projectiles/homing_missile/homing_missile.tscn" id="7_wcngd"]
 [ext_resource type="PackedScene" uid="uid://qctten1dbard" path="res://scenes/game_ui/game_ui.tscn" id="9_sytrn"]
+
+[sub_resource type="Curve2D" id="Curve2D_sytrn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 42, 89, 0, 0, 0, 0, 44, 252, 0, 0, 0, 0, 177, 252, 0, 0, 0, 0, 177, 361, 0, 0, 0, 0, 311, 173, 0, 0, 0, 0, 449, 356, 0, 0, 0, 0, 445, 252, 0, 0, 0, 0, 587, 254, 0, 0, 0, 0, 584, 91)
+}
+point_count = 9
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vpf64")
@@ -25,9 +30,9 @@ position = Vector2(315, 424)
 stream = ExtResource("5_ksici")
 volume_db = -10.0
 
-[node name="HomingMissile" parent="." instance=ExtResource("7_wcngd")]
-position = Vector2(316, 154)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("9_sytrn")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_sytrn")
