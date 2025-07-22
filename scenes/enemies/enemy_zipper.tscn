@@ -1,0 +1,130 @@
+[gd_scene load_steps=19 format=3 uid="uid://bd0of7ef7w6e1"]
+
+[ext_resource type="PackedScene" uid="uid://chegdsch5u5m8" path="res://scenes/enemies/enemy_ship.tscn" id="1_ygr6r"]
+[ext_resource type="Texture2D" uid="uid://eq7fjur406y" path="res://assets/ships/zipper_1.png" id="2_o6slh"]
+[ext_resource type="Texture2D" uid="uid://boqfds8f87l23" path="res://assets/ships/zipper_2.png" id="3_b4x55"]
+[ext_resource type="Texture2D" uid="uid://bf36255ubc5ns" path="res://assets/ships/zipper_3.png" id="4_tsu2m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6slh"]
+radius = 14.0
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p3c5"]
+atlas = ExtResource("2_o6slh")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkyjy"]
+atlas = ExtResource("2_o6slh")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g1lr"]
+atlas = ExtResource("2_o6slh")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8i4s"]
+atlas = ExtResource("2_o6slh")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcd2l"]
+atlas = ExtResource("3_b4x55")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b40ms"]
+atlas = ExtResource("3_b4x55")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy2yo"]
+atlas = ExtResource("3_b4x55")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54uff"]
+atlas = ExtResource("3_b4x55")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13rcc"]
+atlas = ExtResource("4_tsu2m")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ffkm"]
+atlas = ExtResource("4_tsu2m")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbvsl"]
+atlas = ExtResource("4_tsu2m")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya16e"]
+atlas = ExtResource("4_tsu2m")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qulop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p3c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkyjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g1lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8i4s")
+}],
+"loop": true,
+"name": &"zipper_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcd2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b40ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy2yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54uff")
+}],
+"loop": true,
+"name": &"zipper_2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13rcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ffkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbvsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya16e")
+}],
+"loop": true,
+"name": &"zipper_3",
+"speed": 8.0
+}]
+
+[node name="EnemyZipper" instance=ExtResource("1_ygr6r")]
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -12.0
+offset_top = -18.0
+offset_right = 12.0
+offset_bottom = -16.0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o6slh")
+
+[node name="AnimatedSprite2D" parent="." index="5"]
+sprite_frames = SubResource("SpriteFrames_qulop")
+animation = &"zipper_3"
+frame_progress = 0.469671

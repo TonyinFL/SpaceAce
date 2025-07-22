@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://chegdsch5u5m8"]
+
+[ext_resource type="PackedScene" uid="uid://phq02tc2lpsg" path="res://scenes/enemies/enemy_base.tscn" id="1_scyvl"]
+[ext_resource type="Script" uid="uid://cnwkecr1cyxda" path="res://scenes/enemies/enemy_ship.gd" id="2_sqmya"]
+
+[node name="EnemyShip" instance=ExtResource("1_scyvl")]
+script = ExtResource("2_sqmya")
+shoots_at_player = false
+aims_at_player = false
+bullet_type = 1
+bullet_speed = 120.0
+bullet_direction = Vector2(0, 1)
+bullet_wait_time = 3.0
+bullet_wait_time_var = 0.5
+power_up_chance = 0.9
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
+flip_v = true
+
+[node name="ShootTimer" type="Timer" parent="." index="6"]

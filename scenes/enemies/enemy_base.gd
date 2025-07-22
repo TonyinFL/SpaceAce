@@ -1,6 +1,6 @@
 class_name EnemyBase extends PathFollow2D
 
-@export var points: int = 10
+@export var score_points: int = 10
 @export var crash_damage: int = 10
 
 @onready var explosion_points: Node2D = $ExplosionPoints
@@ -30,7 +30,7 @@ func die() -> void:
 
 
 func _on_health_bar_died() -> void:
-	ScoreManager.add_to_score(points)
+	ScoreManager.add_to_score(score_points)
 	die()
 
 

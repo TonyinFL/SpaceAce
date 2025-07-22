@@ -5,7 +5,6 @@ const PLAYER_SPEED: float = 250.0  # Pixels per second
 const BULLET_SPEED: float = 300.0  # Pixels per second
 const BULLET_DIRECTION: Vector2 = Vector2.UP
 
-
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var shield: Shield = $Shield
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

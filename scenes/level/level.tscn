@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4on2i2yykp6r"]
+[gd_scene load_steps=14 format=3 uid="uid://b4on2i2yykp6r"]
 
 [ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://scenes/level_background/level_background.tscn" id="1_3hkb6"]
 [ext_resource type="Script" uid="uid://dv4vs0qt2e8rm" path="res://scenes/level/level.gd" id="1_vpf64"]
@@ -6,13 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://cs7twesq7bmwk" path="res://scenes/player/player.tscn" id="3_4dwx7"]
 [ext_resource type="PackedScene" uid="uid://c8pkpg6y6ly4y" path="res://scenes/object_maker/object_maker.tscn" id="4_k2uda"]
 [ext_resource type="AudioStream" uid="uid://t0l7khnjnye0" path="res://assets/sounds/loops/mercury.wav" id="5_ksici"]
+[ext_resource type="PackedScene" uid="uid://bd0of7ef7w6e1" path="res://scenes/enemies/enemy_zipper.tscn" id="8_tf2q7"]
+[ext_resource type="PackedScene" uid="uid://byp7jhokrt2s" path="res://scenes/enemies/enemy_biomech.tscn" id="9_pe1ox"]
 [ext_resource type="PackedScene" uid="uid://qctten1dbard" path="res://scenes/game_ui/game_ui.tscn" id="9_sytrn"]
+[ext_resource type="PackedScene" uid="uid://dyghoeecjb4w7" path="res://scenes/enemies/enemy_bomber.tscn" id="10_m0bv2"]
 
 [sub_resource type="Curve2D" id="Curve2D_sytrn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 42, 89, 0, 0, 0, 0, 44, 252, 0, 0, 0, 0, 177, 252, 0, 0, 0, 0, 177, 361, 0, 0, 0, 0, 311, 173, 0, 0, 0, 0, 449, 356, 0, 0, 0, 0, 445, 252, 0, 0, 0, 0, 587, 254, 0, 0, 0, 0, 584, 91)
+"points": PackedVector2Array(0, 0, 0, 0, -41, 97, 0, 0, 0, 0, 681, 92)
 }
-point_count = 9
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wcngd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 682, 172, 0, 0, 0, 0, -44, 173)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xv074"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -45, 240, 0, 0, 0, 0, 685, 239)
+}
+point_count = 2
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vpf64")
@@ -36,3 +51,18 @@ volume_db = -10.0
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_sytrn")
+
+[node name="EnemyZipper" parent="Path2D" instance=ExtResource("8_tf2q7")]
+position = Vector2(-41, 97)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wcngd")
+
+[node name="EnemyBiomech" parent="Path2D2" instance=ExtResource("9_pe1ox")]
+position = Vector2(682, 172)
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xv074")
+
+[node name="EnemyBomber" parent="Path2D3" instance=ExtResource("10_m0bv2")]
+position = Vector2(-45, 240)
