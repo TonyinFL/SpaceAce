@@ -13,21 +13,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_sytrn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -41, 97, 0, 0, 0, 0, 681, 92)
+"points": PackedVector2Array(0, 0, 0, 0, -41, 97, 0, 0, 0, 0, 681, 92, 0, 0, 0, 0, 683, 116, 0, 0, 0, 0, -43, 115)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_wcngd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 682, 172, 0, 0, 0, 0, -44, 173)
+"points": PackedVector2Array(0, 0, 0, 0, 682, 172, 0, 0, 0, 0, -44, 173, 0, 0, 0, 0, -45, 194, 0, 0, 0, 0, 680, 198)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_xv074"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -45, 240, 0, 0, 0, 0, 685, 239)
+"points": PackedVector2Array(0, 0, 0, 0, -45, 240, 0, 0, 0, 0, 685, 239, 0, 0, 0, 0, 685, 255, 0, 0, 0, 0, -46, 254)
 }
-point_count = 2
+point_count = 4
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vpf64")

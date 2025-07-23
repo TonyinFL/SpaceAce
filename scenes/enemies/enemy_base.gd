@@ -10,7 +10,7 @@ class_name EnemyBase extends PathFollow2D
 var _speed: float = 100  # Pixels per second
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	progress += _speed * delta
 	if progress_ratio > .99:
 		queue_free()

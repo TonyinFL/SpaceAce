@@ -18,3 +18,5 @@ power_up_chance = 0.9
 flip_v = true
 
 [node name="ShootTimer" type="Timer" parent="." index="6"]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
