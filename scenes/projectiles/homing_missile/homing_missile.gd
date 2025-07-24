@@ -9,7 +9,7 @@ var _player: Player
 
 func _ready() -> void:
 	_player = get_tree().get_first_node_in_group(Player.GROUP_NAME)
-	if !_player:
+	if not _player:
 		queue_free()
 	
 

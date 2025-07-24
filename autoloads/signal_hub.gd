@@ -8,6 +8,7 @@ signal on_create_power_up(power_up_type: PowerUp.PowerUpType, spawn_position: Ve
 signal on_create_random_power_up(spawn_position: Vector2)
 signal on_create_bullet(bullet_type: BulletBase.BulletType, spawn_position: Vector2,
 		direction: Vector2, speed: float)
+signal on_create_homing_missile(spawn_position: Vector2)
 
 
 func emit_on_player_hit(damage: int) -> void:
@@ -37,3 +38,7 @@ func emit_on_create_random_power_up(spawn_position: Vector2) -> void:
 func emit_on_create_bullet(bullet_type: BulletBase.BulletType, spawn_position: Vector2,
 		direction: Vector2, speed: float) -> void:
 	on_create_bullet.emit(bullet_type, spawn_position, direction, speed)
+
+
+func emit_on_create_homing_missile(spawn_position: Vector2) -> void:
+	on_create_homing_missile.emit(spawn_position)

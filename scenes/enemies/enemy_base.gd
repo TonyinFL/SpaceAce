@@ -7,7 +7,7 @@ class_name EnemyBase extends PathFollow2D
 @onready var health_bar: HealthBar = $HealthBar
 @onready var sound: AudioStreamPlayer2D = $Sound
 
-var _speed: float = 100  # Pixels per second
+var _speed: float = 50  # Pixels per second
 
 
 func _process(delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4on2i2yykp6r"]
+[gd_scene load_steps=16 format=3 uid="uid://b4on2i2yykp6r"]
 
 [ext_resource type="PackedScene" uid="uid://cdf2n2vvpqpq3" path="res://scenes/level_background/level_background.tscn" id="1_3hkb6"]
 [ext_resource type="Script" uid="uid://dv4vs0qt2e8rm" path="res://scenes/level/level.gd" id="1_vpf64"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://byp7jhokrt2s" path="res://scenes/enemies/enemy_biomech.tscn" id="9_pe1ox"]
 [ext_resource type="PackedScene" uid="uid://qctten1dbard" path="res://scenes/game_ui/game_ui.tscn" id="9_sytrn"]
 [ext_resource type="PackedScene" uid="uid://dyghoeecjb4w7" path="res://scenes/enemies/enemy_bomber.tscn" id="10_m0bv2"]
+[ext_resource type="PackedScene" uid="uid://b1rhsfktyev0" path="res://scenes/enemies/saucer.tscn" id="11_pe1ox"]
 
 [sub_resource type="Curve2D" id="Curve2D_sytrn"]
 _data = {
@@ -28,6 +29,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -45, 240, 0, 0, 0, 0, 685, 239, 0, 0, 0, 0, 685, 255, 0, 0, 0, 0, -46, 254)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_m0bv2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 481.158, 53.1974, 0, 0, 0, 0, -8.97781, 59.1842, 0, 0, 0, 0, 480.008, 236.395, 0, 0, 0, 0, -14.7306, 237.592, 0, 0, 0, 0, 478.857, 53.1974)
+}
+point_count = 5
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vpf64")
@@ -66,3 +73,11 @@ curve = SubResource("Curve2D_xv074")
 
 [node name="EnemyBomber" parent="Path2D3" instance=ExtResource("10_m0bv2")]
 position = Vector2(-45, 240)
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(87.803, 23.5714)
+scale = Vector2(0.869146, 0.835165)
+curve = SubResource("Curve2D_m0bv2")
+
+[node name="Saucer" parent="Path2D4" instance=ExtResource("11_pe1ox")]
+position = Vector2(481.158, 53.1974)

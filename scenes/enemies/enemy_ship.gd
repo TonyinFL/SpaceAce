@@ -19,7 +19,7 @@ var _player: Player
 
 func _ready() -> void:
 	_player = get_tree().get_first_node_in_group(Player.GROUP_NAME)
-	if !_player:
+	if not _player:
 		queue_free()
 	SpaceUtils.play_random_animation(animated_sprite_2d)
 	start_shoot_timer()
@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func die() -> void:
 	create_power_up()
-	super.die()
+	super()
 
 
 func create_power_up() -> void:

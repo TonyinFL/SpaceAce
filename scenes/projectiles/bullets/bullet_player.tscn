@@ -20,7 +20,6 @@ texture = ExtResource("2_gwdbd")
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_8j3rh")
 
-[node name="AudioStreamPlayer2D" parent="." index="4"]
+[node name="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource("4_blht0")
 volume_db = -15.0
-autoplay = true
