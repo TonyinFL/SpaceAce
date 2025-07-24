@@ -1,19 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://yaiu427tuva7"]
+[gd_scene load_steps=27 format=3 uid="uid://yaiu427tuva7"]
 
 [ext_resource type="Script" uid="uid://cqjln3a32r0iy" path="res://scenes/explosions/explosion.gd" id="1_f5lqq"]
-[ext_resource type="AudioStream" uid="uid://5y11xverjxhw" path="res://assets/sounds/explosions/sfx_exp_medium1.wav" id="2_piueb"]
 [ext_resource type="Texture2D" uid="uid://bttsfvx0qbcq2" path="res://assets/misc/boom.png" id="3_nt3ar"]
-[ext_resource type="AudioStream" uid="uid://c4qkp4c6n8l6i" path="res://assets/sounds/explosions/sfx_exp_medium2.wav" id="3_pdibq"]
-[ext_resource type="AudioStream" uid="uid://d1vy2y25mt1wf" path="res://assets/sounds/explosions/sfx_exp_medium3.wav" id="4_782gf"]
 [ext_resource type="Texture2D" uid="uid://0t10xuyfxqxx" path="res://assets/misc/explode.png" id="4_pdibq"]
-[ext_resource type="AudioStream" uid="uid://dkh42ao78n723" path="res://assets/sounds/explosions/sfx_exp_medium4.wav" id="5_nphml"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q7tqi"]
-streams_count = 4
-stream_0/stream = ExtResource("2_piueb")
-stream_1/stream = ExtResource("3_pdibq")
-stream_2/stream = ExtResource("4_782gf")
-stream_3/stream = ExtResource("5_nphml")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_782gf"]
 atlas = ExtResource("3_nt3ar")
@@ -186,8 +175,8 @@ animations = [{
 z_index = 10
 script = ExtResource("1_f5lqq")
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_q7tqi")
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
