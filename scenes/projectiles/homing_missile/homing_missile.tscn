@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmhde5d1ip83p"]
+[gd_scene load_steps=9 format=3 uid="uid://bmhde5d1ip83p"]
 
 [ext_resource type="PackedScene" uid="uid://dlcldii4i6q5b" path="res://scenes/projectiles/projectile.tscn" id="1_cgnfj"]
 [ext_resource type="Script" uid="uid://cqer478e41p4t" path="res://scenes/projectiles/homing_missile/homing_missile.gd" id="2_ls5u1"]
 [ext_resource type="Texture2D" uid="uid://bqywi64wvxcqj" path="res://assets/bullets/homing_missile.png" id="2_ncklo"]
 [ext_resource type="Texture2D" uid="uid://b0hlsmrvemel0" path="res://assets/misc/particle_dot.png" id="3_ls5u1"]
+[ext_resource type="PackedScene" uid="uid://d1uk0utxa7nyl" path="res://scenes/health_bar/health_bar.tscn" id="5_7ltpa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ltpa"]
 radius = 5.0
@@ -17,7 +18,7 @@ point_count = 3
 colors = PackedColorArray(1.7, 0.5, 0, 1, 2, 2, 0.04, 1)
 
 [node name="HomingMissile" instance=ExtResource("1_cgnfj")]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 35
 script = ExtResource("2_ls5u1")
 
@@ -51,3 +52,13 @@ scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_ncklo")
 color = Color(1, 1, 0.0235294, 1)
 color_ramp = SubResource("Gradient_ls5u1")
+
+[node name="HealthBar" parent="." index="5" instance=ExtResource("5_7ltpa")]
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 7.0
+offset_bottom = -12.0
+start_health = 25
+max_health = 25
+
+[connection signal="died" from="HealthBar" to="." method="_on_health_bar_died"]
