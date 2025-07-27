@@ -59,19 +59,19 @@ volume_db = -10.0
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_sytrn")
 
-[node name="EnemyZipper" parent="Path2D" instance=ExtResource("8_tf2q7")]
+[node name="EnemyBiomech" parent="Path2D" instance=ExtResource("9_pe1ox")]
 position = Vector2(-41, 97)
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_wcngd")
 
-[node name="EnemyBiomech" parent="Path2D2" instance=ExtResource("9_pe1ox")]
+[node name="EnemyBomber" parent="Path2D2" instance=ExtResource("10_m0bv2")]
 position = Vector2(682, 172)
 
 [node name="Path2D3" type="Path2D" parent="."]
 curve = SubResource("Curve2D_xv074")
 
-[node name="EnemyBomber" parent="Path2D3" instance=ExtResource("10_m0bv2")]
+[node name="EnemyZipper" parent="Path2D3" instance=ExtResource("8_tf2q7")]
 position = Vector2(-45, 240)
 
 [node name="Path2D4" type="Path2D" parent="."]

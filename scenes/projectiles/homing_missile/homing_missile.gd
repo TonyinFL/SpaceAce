@@ -13,7 +13,7 @@ func _ready() -> void:
 	_player = get_tree().get_first_node_in_group(Player.GROUP_NAME)
 	if not _player:
 		queue_free()
-	
+
 
 func _process(delta: float) -> void:
 	var direction_to_player: Vector2 = global_position.direction_to(_player.global_position)
@@ -23,14 +23,12 @@ func _process(delta: float) -> void:
 	position += transform.x * MOVEMENT_SPEED * delta
 
 
-# TODO Use larger explosion when missle is destroyed and shake screen.
-# TODO Update explosion names to EXPLOSION_BIG and EXPLOSION_SMALL along with
-#      corresponding audio names.
-
-
 func blow_up() -> void:
+	const OFFSET: Vector2 = Vector2(0, 15)
 	ScoreManager.add_to_score(SCORE_POINTS)
-	SignalHub.emit_on_create_explosion(Explosion.BOOM, global_position)
+	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position)
+	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position - OFFSET)
+	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position + OFFSET)
 	super()
 
 
@@ -39,7 +37,7 @@ func _on_area_entered(area: Area2D) -> void:
 		health_bar.take_damage(area.get_damage())
 	elif area is Player or area is Shield:
 		blow_up()
-		
+
 
 func _on_health_bar_died() -> void:
 	blow_up()

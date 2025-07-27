@@ -19,13 +19,16 @@ func _process(delta: float) -> void:
 func make_explosions() -> void:
 	for explosion_point:Marker2D in explosion_points.get_children():
 		SignalHub.emit_on_create_explosion(
-			Explosion.BOOM,
+			Explosion.EXPLOSION_BIG,
 			explosion_point.global_position 
 		)
 
 
 func die() -> void:
-	make_explosions()
+	# For timing purposes, make_explosions() for Saucer is directly
+	# invoked from AnimationPlayer.
+	if self is not Saucer:
+		make_explosions()
 	queue_free()
 
 
