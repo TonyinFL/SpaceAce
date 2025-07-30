@@ -4,5 +4,5 @@ class_name LifeTimer extends Node
 
 
 func _ready() -> void:
-	await get_tree().create_timer(life_seconds).timeout
+	await get_tree().create_timer(life_seconds, false).timeout
 	get_parent().queue_free()

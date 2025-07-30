@@ -1,7 +1,7 @@
 class_name HealthBar extends TextureProgressBar
 
+# TODO Rename signal to health_bar_died.
 signal died
-
 
 @export var start_health: int = 100
 @export var max_health: int = 100

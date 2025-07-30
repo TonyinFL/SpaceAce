@@ -4,6 +4,11 @@ class_name Main extends Control
 @onready var exit_button: TextureButton = $MC/VB/ExitButton
 
 
+func _ready() -> void:
+	# Set process_mode in code for clarity; can also be configured via the Inspector.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
 func _on_play_button_pressed() -> void:
 	GameManager.load_level_scene()
 

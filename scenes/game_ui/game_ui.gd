@@ -6,6 +6,7 @@ class_name GameUI extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ScoreManager.reset_score()
 	SignalHub.on_player_hit.connect(on_player_hit)
 	SignalHub.on_player_health_bonus.connect(on_player_health_bonus)
 	SignalHub.on_score_updated.connect(on_score_updated)
@@ -25,4 +26,4 @@ func on_score_updated(score: int) -> void:
 
 
 func _on_health_bar_died() -> void:
-	print ("Player died!")
+	SignalHub.emit_on_player_died()

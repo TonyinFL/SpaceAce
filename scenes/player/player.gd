@@ -63,6 +63,7 @@ func shoot() -> void:
 		BULLET_SPEED
 	)
 
+
 func _on_area_entered(area: Area2D) -> void:
 	if area is PowerUp:
 		match area.get_power_up_type():
@@ -72,3 +73,7 @@ func _on_area_entered(area: Area2D) -> void:
 				SignalHub.emit_on_player_health_bonus(PowerUp.HEALTH_BONUS)
 	elif area is Projectile:
 		SignalHub.emit_on_player_hit(area.get_damage())
+	# Consider using a class_name (e.g., EnemyHitBox) or an enum/type field on the HitBox
+	# to identify it directly, instead of checking the parent node type.
+	elif area.get_parent() is EnemyBase:
+		SignalHub.emit_on_player_hit(area.get_parent().crash_damage)
