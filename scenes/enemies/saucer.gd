@@ -31,6 +31,7 @@ func _on_health_bar_died() -> void:
 	SpaceUtils.toggle_area2d(hit_box, false)
 	ScoreManager.add_to_score(score_points)
 
+
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "die":
 		die()

@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 
 func blow_up() -> void:
 	const OFFSET: Vector2 = Vector2(0, 15)
-	ScoreManager.add_to_score(SCORE_POINTS)
 	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position)
 	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position - OFFSET)
 	SignalHub.emit_on_create_explosion(Explosion.EXPLOSION_BIG, global_position + OFFSET)
@@ -40,4 +39,5 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_health_bar_died() -> void:
+	ScoreManager.add_to_score(SCORE_POINTS)
 	blow_up()
