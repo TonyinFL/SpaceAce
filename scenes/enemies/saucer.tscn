@@ -200,6 +200,8 @@ transitions = ["spin", "shoot", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Saucer" instance=ExtResource("1_dfi5c")]
 script = ExtResource("2_2pyt5")
+score_points = 50
+crash_damage = 50
 
 [node name="Marker2D" type="Marker2D" parent="ExplosionPoints" index="0"]
 position = Vector2(-18, -18)

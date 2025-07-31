@@ -42,3 +42,7 @@ func add_health(v: int) -> void:
 
 func take_damage(v: int) -> void:
 	change_value(-v)
+
+
+func take_max_damage() -> void:
+	take_damage(int(value))

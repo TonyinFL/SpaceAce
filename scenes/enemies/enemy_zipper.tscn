@@ -112,6 +112,8 @@ animations = [{
 }]
 
 [node name="EnemyZipper" instance=ExtResource("1_ygr6r")]
+score_points = 20
+crash_damage = 20
 
 [node name="Marker2D" type="Marker2D" parent="ExplosionPoints" index="0"]
 position = Vector2(-10, 0)

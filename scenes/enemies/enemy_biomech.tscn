@@ -149,6 +149,8 @@ animations = [{
 shoots_at_player = true
 bullet_wait_time = 2.0
 bullet_wait_time_var = 0.2
+score_points = 30
+crash_damage = 30
 
 [node name="Marker2D" type="Marker2D" parent="ExplosionPoints" index="0"]
 

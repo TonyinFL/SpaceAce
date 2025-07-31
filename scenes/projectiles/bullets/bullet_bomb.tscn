@@ -50,13 +50,14 @@ _data = {
 collision_layer = 4
 collision_mask = 33
 script = ExtResource("2_02gh2")
+damage = 15
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_0v8nm")
 hframes = 4
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_0v8nm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]

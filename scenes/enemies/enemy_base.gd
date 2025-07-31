@@ -43,4 +43,7 @@ func on_health_bar_died() -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is BulletBase:
-		health_bar.take_damage(area.get_damage())
+		health_bar.take_damage(area.damage)
+	elif area is Player or area is Shield:
+		# Destroy enemy upon collision with player or shield.
+		health_bar.take_max_damage()

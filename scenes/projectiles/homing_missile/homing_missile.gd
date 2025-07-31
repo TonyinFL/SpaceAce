@@ -34,7 +34,7 @@ func blow_up() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is BulletBase:
-		health_bar.take_damage(area.get_damage())
+		health_bar.take_damage(area.damage)
 	elif area is Player or area is Shield:
 		blow_up()
 

@@ -116,6 +116,8 @@ shoots_at_player = true
 aims_at_player = true
 bullet_type = 2
 bullet_speed = 80.0
+score_points = 40
+crash_damage = 40
 
 [node name="Marker2D" type="Marker2D" parent="ExplosionPoints" index="0"]
 position = Vector2(0, -5)

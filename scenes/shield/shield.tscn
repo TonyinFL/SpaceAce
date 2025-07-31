@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bge766uf5kw2c"]
+[gd_scene load_steps=10 format=3 uid="uid://bge766uf5kw2c"]
 
 [ext_resource type="Script" uid="uid://dl2yfqhimbf8y" path="res://scenes/shield/shield.gd" id="1_oyk5a"]
 [ext_resource type="Texture2D" uid="uid://cxbmrtydw8d4e" path="res://assets/shields/shield_small.png" id="1_vqfoy"]
 [ext_resource type="AudioStream" uid="uid://c13f6780cid8r" path="res://assets/sounds/power_ups/shield_18.wav" id="3_kbfv6"]
+[ext_resource type="FontFile" uid="uid://b33msg5mojbvg" path="res://assets/fonts/luckiest_guy_regular.ttf" id="4_kbfv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcb3g"]
 radius = 29.0
@@ -45,6 +46,11 @@ _data = {
 &"hit": SubResource("Animation_ynolq")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_lcb3g"]
+font = ExtResource("4_kbfv6")
+outline_size = 4
+outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+
 [node name="Shield" type="Area2D"]
 collision_layer = 32
 collision_mask = 12
@@ -68,6 +74,15 @@ stream = ExtResource("3_kbfv6")
 libraries = {
 &"": SubResource("AnimationLibrary_kwwg8")
 }
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -91.0
+offset_top = -65.0
+offset_right = -16.0
+offset_bottom = -28.0
+text = "Shield: 50
+Time: 10.1"
+label_settings = SubResource("LabelSettings_lcb3g")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -20,7 +20,7 @@ life_seconds = 30.0
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 8
-collision_mask = 2
+collision_mask = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 

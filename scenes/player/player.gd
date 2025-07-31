@@ -1,9 +1,5 @@
 class_name Player extends Area2D
 
-# TODO When player shield is not active, both player and enemy should take damage
-#      from a collision. 
-# TODO When player shield is active, only enemy should take damage from a 
-#      collision.
 # TODO Add player ship explosion upon player death and don't stop the game until the
 #      explosion animation completes.
 
@@ -79,7 +75,7 @@ func _on_area_entered(area: Area2D) -> void:
 			PowerUp.PowerUpType.Health:
 				SignalHub.emit_player_health_bonus(PowerUp.HEALTH_BONUS)
 	elif area is Projectile:
-		SignalHub.emit_player_hit(area.get_damage())
+		SignalHub.emit_player_hit(area.damage)
 	# Consider using a class_name (e.g., EnemyHitBox) or an enum/type field on the HitBox
 	# to identify it directly, instead of checking the parent node type.
 	elif area.get_parent() is EnemyBase:
