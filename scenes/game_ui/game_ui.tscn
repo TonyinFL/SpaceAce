@@ -48,5 +48,3 @@ label_settings = ExtResource("2_najyh")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2cwxn")
-
-[connection signal="died" from="ColorRect/MarginContainer/HealthBar" to="." method="_on_health_bar_died"]

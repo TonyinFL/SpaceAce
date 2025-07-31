@@ -1,7 +1,6 @@
 class_name HealthBar extends TextureProgressBar
 
-# TODO Rename signal to health_bar_died.
-signal died
+signal health_bar_died
 
 @export var start_health: int = 100
 @export var max_health: int = 100
@@ -33,7 +32,7 @@ func set_color() -> void:
 func change_value(v: int) -> void:
 	value += v
 	if value <= 0:
-		died.emit()
+		health_bar_died.emit()
 	set_color()
 
 
@@ -43,4 +42,3 @@ func add_health(v: int) -> void:
 
 func take_damage(v: int) -> void:
 	change_value(-v)
-	

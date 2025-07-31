@@ -9,11 +9,11 @@ const BULLET_BOMB: PackedScene = preload("res://scenes/projectiles/bullets/bulle
 const HOMING_MISSILE: PackedScene = preload("res://scenes/projectiles/homing_missile/homing_missile.tscn")
 
 func _ready() -> void:
-	SignalHub.on_create_explosion.connect(on_create_explosion)
-	SignalHub.on_create_power_up.connect(on_create_power_up)
-	SignalHub.on_create_random_power_up.connect(on_create_random_power_up)
-	SignalHub.on_create_bullet.connect(on_create_bullet)
-	SignalHub.on_create_homing_missile.connect(on_create_homing_missile)
+	SignalHub.create_explosion.connect(on_create_explosion)
+	SignalHub.create_power_up.connect(on_create_power_up)
+	SignalHub.create_random_power_up.connect(on_create_random_power_up)
+	SignalHub.create_bullet.connect(on_create_bullet)
+	SignalHub.create_homing_missile.connect(on_create_homing_missile)
 
 
 func add_object(object: Node, spawn_position: Vector2) -> void:

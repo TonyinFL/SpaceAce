@@ -6,7 +6,7 @@ const SHAKE_TIME: float = 0.3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalHub.on_player_hit.connect(on_player_hit)
+	SignalHub.player_hit.connect(on_player_hit)
 	set_process(false)
 
 

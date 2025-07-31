@@ -10,6 +10,10 @@ class_name EnemyBase extends PathFollow2D
 var _speed: float = 50  # Pixels per second
 
 
+func _ready() -> void:
+	health_bar.health_bar_died.connect(on_health_bar_died)
+
+
 func _process(delta: float) -> void:
 	progress += _speed * delta
 	if progress_ratio > .99:
@@ -18,7 +22,7 @@ func _process(delta: float) -> void:
 
 func make_explosions() -> void:
 	for explosion_point:Marker2D in explosion_points.get_children():
-		SignalHub.emit_on_create_explosion(
+		SignalHub.emit_create_explosion(
 			Explosion.EXPLOSION_BIG,
 			explosion_point.global_position 
 		)
@@ -32,7 +36,7 @@ func die() -> void:
 	queue_free()
 
 
-func _on_health_bar_died() -> void:
+func on_health_bar_died() -> void:
 	ScoreManager.add_to_score(score_points)
 	die()
 

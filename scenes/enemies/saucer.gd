@@ -17,14 +17,14 @@ func set_shooting(shooting: bool) -> void:
 
 
 func fire_homing_missle() -> void:
-	SignalHub.emit_on_create_homing_missile(global_position)
+	SignalHub.emit_create_homing_missile(global_position)
 
 
 func _on_shoot_timer_timeout() -> void:
 	set_shooting(true)
 
 
-func _on_health_bar_died() -> void:
+func on_health_bar_died() -> void:
 	is_dead = true
 	shoot_timer.stop()
 	set_process(false)

@@ -60,5 +60,3 @@ offset_right = 7.0
 offset_bottom = -12.0
 start_health = 25
 max_health = 25
-
-[connection signal="died" from="HealthBar" to="." method="_on_health_bar_died"]

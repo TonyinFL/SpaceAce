@@ -1,5 +1,12 @@
 class_name Player extends Area2D
 
+# TODO When player shield is not active, both player and enemy should take damage
+#      from a collision. 
+# TODO When player shield is active, only enemy should take damage from a 
+#      collision.
+# TODO Add player ship explosion upon player death and don't stop the game until the
+#      explosion animation completes.
+
 const GROUP_NAME: String = "Player"
 const PLAYER_SPEED: float = 250.0  # Pixels per second
 const BULLET_SPEED: float = 300.0  # Pixels per second
@@ -56,7 +63,7 @@ func get_input() -> Vector2:
 		
 
 func shoot() -> void:
-	SignalHub.emit_on_create_bullet(
+	SignalHub.emit_create_bullet(
 		BulletBase.BulletType.Player,
 		global_position, 
 		BULLET_DIRECTION,
@@ -70,10 +77,10 @@ func _on_area_entered(area: Area2D) -> void:
 			PowerUp.PowerUpType.Shield:
 				shield.enable_shield(PowerUp.SHIELD_DURATION)
 			PowerUp.PowerUpType.Health:
-				SignalHub.emit_on_player_health_bonus(PowerUp.HEALTH_BONUS)
+				SignalHub.emit_player_health_bonus(PowerUp.HEALTH_BONUS)
 	elif area is Projectile:
-		SignalHub.emit_on_player_hit(area.get_damage())
+		SignalHub.emit_player_hit(area.get_damage())
 	# Consider using a class_name (e.g., EnemyHitBox) or an enum/type field on the HitBox
 	# to identify it directly, instead of checking the parent node type.
 	elif area.get_parent() is EnemyBase:
-		SignalHub.emit_on_player_hit(area.get_parent().crash_damage)
+		SignalHub.emit_player_hit(area.get_parent().crash_damage)

@@ -26,7 +26,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 	get_tree().paused = false
-	SignalHub.on_player_died.connect(on_player_died)
+	SignalHub.player_died.connect(on_player_died)
 
 
 func on_player_died() -> void:

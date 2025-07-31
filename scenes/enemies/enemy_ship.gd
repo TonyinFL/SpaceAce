@@ -18,6 +18,7 @@ var _player: Player
 
 
 func _ready() -> void:
+	super()  # Setup health_bar_died signal
 	_player = get_tree().get_first_node_in_group(Player.GROUP_NAME)
 	if not _player:
 		queue_free()
@@ -32,7 +33,7 @@ func die() -> void:
 
 func create_power_up() -> void:
 	if randf() <= power_up_chance:
-		SignalHub.emit_on_create_random_power_up(global_position)
+		SignalHub.emit_create_random_power_up(global_position)
 
 
 func start_shoot_timer() -> void:
@@ -51,7 +52,7 @@ func shoot() -> void:
 		return
 	if shoots_at_player:
 		update_bullet_direction()
-		SignalHub.emit_on_create_bullet(bullet_type, global_position, bullet_direction, bullet_speed)
+		SignalHub.emit_create_bullet(bullet_type, global_position, bullet_direction, bullet_speed)
 	start_shoot_timer()
 
 

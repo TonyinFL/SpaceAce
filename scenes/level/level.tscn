@@ -51,7 +51,8 @@ position = Vector2(315, 424)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ksici")
-volume_db = -10.0
+volume_db = -20.0
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
